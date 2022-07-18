@@ -1,0 +1,9 @@
+@import "fonts";
+@import 'variables.scss';
+
+body {
+  font-family: 'PlusJakartaRegular';
+  font-weight: 400;
+  font-size: 18px;
+  color: $black;
+}

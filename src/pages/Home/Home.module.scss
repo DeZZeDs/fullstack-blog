@@ -1,0 +1,23 @@
+@import "../../assets/styles/variables";
+
+.homeTopWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  button {
+    border: 3px solid $primary;
+    transition: all .3s ease-in;
+    color: $primary;
+    background-color: transparent;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary;
+      color:#fff;
+    }
+  }
+}

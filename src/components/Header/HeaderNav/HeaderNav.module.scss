@@ -1,0 +1,36 @@
+@import '../../../assets/styles/_variables';
+
+.nav__list {
+  display: flex;
+  align-items: center;
+
+  li {
+    max-width: 200px;
+    padding: 0px 10px;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: $black;
+      font-size: 18px;
+      transition: all .3s ease-in;
+      &:hover {
+        color: $primary;
+      }
+      p {
+        margin-left:5px;
+      }
+    }
+
+    div {
+      p {
+        transition: all .3s ease-in;
+        cursor: pointer;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+}

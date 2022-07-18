@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Home, FullPost, Registration, AddPost, Login } from "./pages";
+import { Routes, Route } from 'react-router-dom';
+import Layout from "./components/Layout";
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
+import {fetchProfile} from "./store/Slices/authSlice";
 
 function App() {
+    const dispatch = useDispatch();
+    useEffect( () => {
+        dispatch(fetchProfile());
+    },[dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Layout>
+            <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/posts/:id" element={<FullPost />}></Route>
+                <Route path="/posts/create" element={<AddPost />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/register" element={<Registration />}></Route>
+                <Route path="*" element={ <Home/> }></Route>
+            </Routes>
+        </Layout>
+    </>
   );
 }
 
